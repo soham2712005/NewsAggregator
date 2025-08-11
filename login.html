@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #141E30, #243B55);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 350px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+        .btn-custom {
+            background-color: #ffcc00;
+            border: none;
+            padding: 12px 25px;
+            font-size: 18px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .btn-custom:hover {
+            background-color: #e6b800;
+        }
+        .form-control {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+        }
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .message {
+            margin-top: 10px;
+            font-size: 14px;
+            display: none;
+            padding: 8px;
+            border-radius: 5px;
+        }
+        .error {
+            background-color: rgba(255, 0, 0, 0.7);
+            color: white;
+        }
+        .success {
+            background-color: rgba(0, 255, 0, 0.7);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <input type="text" id="username" class="form-control mb-3" placeholder="Enter Username">
+        <input type="email" id="email" class="form-control mb-3" placeholder="Enter Email Address">
+        <input type="password" id="password" class="form-control mb-3" placeholder="Enter Password">
+        <button class="btn btn-custom" onclick="login()">Login</button>
+        <p id="message" class="message"></p>
+    </div>
+
+    <script>
+        function login() {
+            let username = document.getElementById("username").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let message = document.getElementById("message");
+
+            if (!username || !email || !password) {
+                message.innerText = "All fields are required!";
+                message.className = "message error";
+                message.style.display = "block";
+                return;
+            }
+
+            if (password.length < 8) {
+                message.innerText = "Password must be at least 8 characters!";
+                message.className = "message error";
+                message.style.display = "block";
+                return;
+            }
+
+            // Simulating login success
+            message.innerText = "Login successful!";
+            message.className = "message success";
+            message.style.display = "block";
+
+            setTimeout(() => {
+                localStorage.setItem("loggedIn", "true");
+                window.location.href = "index.html"; // Redirect to homepage or dashboard
+            }, 1500);
+        }
+    </script>
+</body>
+</html>

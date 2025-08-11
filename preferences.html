@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferences - Personalized News</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+        }
+        .form-group {
+            margin: 15px 0;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-control {
+            height: 35px; /* Reduced height */
+            font-size: 14px; /* Smaller text */
+            padding: 5px;
+            width: 100%; /* Ensuring responsiveness */
+        }
+        .btn-custom {
+            margin-top: 20px;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 8px;
+            background: #ffcc00;
+            color: #0f2027;
+            font-weight: bold;
+            border: none;
+            width: 100%;
+        }
+        .btn-custom:hover {
+            background: #e6b800;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Set Your Preferences</h2>
+        <form id="preferencesForm">
+            <div class="form-group">
+                <label for="topics">Select Topics:</label>
+                <select id="topics" class="form-control">
+                    <option value="general">General</option>
+                    <option value="technology">Technology</option>
+                    <option value="sports">Sports</option>
+                    <option value="politics">Politics</option>
+                    <option value="health">Health</option>
+                    <option value="business">Business</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="region">Select Region:</label>
+                <select id="region" class="form-control">
+                    <option value="in">India</option>
+                    <option value="us">USA</option>
+                    <option value="gb">UK</option>
+                    <option value="au">Australia</option>
+                    <option value="ca">Canada</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="language">Select Language:</label>
+                <select id="language" class="form-control">
+                    <option value="en">English</option>
+                    <option value="hi">Hindi</option>
+                    <option value="mr">Marathi</option>
+                    <option value="ta">Tamil</option>
+                    <option value="te">Telugu</option>
+                    <option value="bn">Bengali</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-custom">Save & Fetch News</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("preferencesForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const topic = document.getElementById("topics").value;
+            const region = document.getElementById("region").value;
+            const language = document.getElementById("language").value;
+
+            // Save to localStorage with correct keys
+            localStorage.setItem("selectedTopic", topic);
+            localStorage.setItem("selectedRegion", region);
+            localStorage.setItem("selectedLanguage", language);
+
+            window.location.href = "articles.html";  // Redirect to articles page
+        });
+    </script>
+</body>
+</html>

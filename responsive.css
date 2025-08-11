@@ -1,0 +1,66 @@
+/* Base Styles (Applied to all devices) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .content {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .footer {
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .btn {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+    .image {
+        width: 100%;
+        height: auto;
+    }
+    .text {
+        font-size: 14px;
+    }
+}

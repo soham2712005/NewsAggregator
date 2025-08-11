@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized News Aggregator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+            font-family: 'Source Sans Pro', sans-serif
+        }
+        .navbar {
+            background-color: rgb(29, 29, 29);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: rgb(231, 231, 231);
+            font-family: 'Cinzel', serif;
+        }
+        .nav-item .nav-link {
+            color: white;
+            font-size: 18px;
+        }
+        .nav-item .nav-link:hover {
+            color: #ffcc00;
+        }
+        .logout-btn {
+            background-color: #ff4444;
+            padding: 10px 20px;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+        }
+        .logout-btn:hover {
+            background-color: #cc0000;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            overflow: hidden;
+        }
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .video-overlay {
+            position: absolute;
+            bottom: 10%;
+            left: 5%;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .content-section {
+            padding: 40px 10%;
+            text-align: center;
+            color: #ffcc00;
+        }
+        .content-section h1 {
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+        .content-section p {
+            font-size: 18px;
+            color: #cccccc;
+        }
+        .carousel-item {
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <img src="./images/logoo.png.jpg" alt="Logo" width="50">
+        <span class="navbar-brand">Personalized News Aggregator</span>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </nav>
+    
+    <ul class="nav nav-tabs justify-content-center mt-2">
+        <li class="nav-item"><a class="nav-link" href="preferences.html">Preferences</a></li>
+        <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
+        <li class="nav-item"><a class="nav-link" href="magazine.html">Magazine</a></li>
+        <li class="nav-item"><a class="nav-link" href="collaboration.html">Collaboration</a></li>
+        <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
+    </ul>
+
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="introback.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay">
+            <h1>Welcome to Personalized News Aggregator</h1>
+            <p>Bringing you the latest news tailored to your preferences.</p>
+        </div>
+    </div>
+    
+    <div class="content-section">
+        <h2>Stay Updated with Personalized News:</h2>
+        <p>Our platform ensures you receive the latest and most relevant news based on your interests.
+            "In today’s fast-paced digital world, staying informed with relevant and trustworthy news is more important than ever. Our Personalized News Aggregator ensures that you receive the latest updates tailored to your interests, providing a seamless and engaging experience. Whether you're passionate about technology, politics, sports, health, or entertainment, our platform curates content from trusted sources, giving you real-time insights at your fingertips. Say goodbye to information overload and enjoy a smart, personalized approach to news consumption. Stay ahead, stay informed, and explore the world with news that truly matters to you."
+        </p>
+        <h3>Key Features:</h3>
+        <p>✔ Customized News Feed | ✔ Multi-Platform Support | ✔ Reliable Updates | ✔ Various News Sources</p>
+        <h3>How It Works:</h3>
+        <p>1️⃣ Choose Interests | 2️⃣ Subscribe to Sources | 3️⃣ Get Instant Updates</p>
+    </div>
+
+    <div class="container mt-5">
+        <center><h2>Latest News</h2></center> 
+        <div id="newsCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="background-image: url('./images/news1.jpg');">
+                    <div class="carousel-caption">
+                        <h4>Breaking: Global Markets See Major Surge</h4>
+                        <p>Stock markets around the world are experiencing a significant rise...</p>
+                    </div>
+                </div>
+                
+                <div class="carousel-item" style="background-image: url('./images/news2.jpg');">
+                    <div class="carousel-caption">
+                        <h4>Tech Giants Announce AI Collaboration</h4>
+                        <p>Leading technology companies have announced a new partnership...</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('./images/news3.jpg');">
+                    <div class="carousel-caption">
+                        <h4>Sports: Historic Win in Football Championship</h4>
+                        <p>The national team secures a thrilling victory...</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+    <div class="footer mt-5 text-center">
+        <p>&copy; 2025 Personalized News Aggregator. All Rights Reserved.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function logout() {
+            localStorage.removeItem("loggedIn");
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

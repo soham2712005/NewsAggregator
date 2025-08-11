@@ -1,0 +1,104 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Cinzel:wght@600&display=swap');
+
+/* General Styles */
+body {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* Ensures the video fills the entire screen without cropping */
+    z-index: -1;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Cinzel', serif;
+    transition: 0.3s;
+}
+
+.navbar-brand:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
+/* Buttons */
+.btn-custom {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 10px;
+    background: #ffcc00;
+    color: #0f2027;
+    font-weight: bold;
+    border: none;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+.news-image {
+    width: 80%; /* Adjust width to 80% of container */
+    max-width: 600px; /* Set a maximum width */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 20px auto; /* Centering the image */
+    border-radius: 10px; /* Optional: Smooth edges */
+}
+.news-image {
+    width: 100%;
+    max-width: 600px;
+    height: 300px; /* Set a fixed height */
+    object-fit: cover; /* Crop the image to fit */
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.btn-custom:hover {
+    background: #e6b800;
+    transform: scale(1.05);
+}
+
+/* Cards (For News Blocks) */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+    animation: fadeIn 1s ease-in-out;
+}
