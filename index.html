@@ -11,83 +11,180 @@
         body {
             background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
             color: white;
-            font-family: 'Source Sans Pro', sans-serif
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
         }
         .navbar {
-            background-color: rgb(29, 29, 29);
+            background-color: rgba(0, 0, 0, 0.85);
             padding: 15px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            position: relative;
         }
         .navbar-brand {
-            font-size: 24px;
+            font-size: 30px;
             font-weight: bold;
-            color: rgb(231, 231, 231);
+            color: white;
             font-family: 'Cinzel', serif;
         }
-        .nav-item .nav-link {
-            color: white;
-            font-size: 18px;
-        }
-        .nav-item .nav-link:hover {
-            color: #ffcc00;
-        }
-        .logout-btn {
-            background-color: #ff4444;
-            padding: 10px 20px;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            border: none;
-        }
-        .logout-btn:hover {
-            background-color: #cc0000;
-        }
-        .video-container {
+        .menu-container {
             position: relative;
-            width: 100%;
-            height: 60vh;
-            overflow: hidden;
+            display: flex;
+            align-items: center;
         }
-        .video-container video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .menu-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            margin-right: 15px;
         }
-        .video-overlay {
+        .menu-dropdown {
+            display: none;
             position: absolute;
-            bottom: 10%;
-            left: 5%;
-            background: rgba(0, 0, 0, 0.6);
+            top: 40px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.9);
+            border-radius: 5px;
+            padding: 10px;
+            width: 200px;
+            text-align: left;
+        }
+        .menu-dropdown a {
+            display: block;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+        }
+        .menu-dropdown a:hover {
+            background: #ffcc00;
+            color: black;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        .headline {
+            font-size: 50px;
+            font-weight: bold;
+            font-family: 'Cinzel', serif;
+            text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.2);
+        }
+        .subtext {
+            font-size: 20px;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+        .btn-custom {
+            margin-top: 30px;
+            padding: 15px 30px;
+            font-size: 20px;
+            border-radius: 8px;
+            border: none;
+            background: #ffcc00;
+            color: #0f2027;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-custom:hover {
+            background: #e6b800;
+            transform: scale(1.05);
+        }
+        .info-section {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .slider {
+            display: flex;
+            gap: 20px;
+            animation: slide 30s linear infinite;
+            width: max-content;
+        }
+        .info-box {
+            background: rgba(255, 255, 255, 0.2);
             padding: 20px;
             border-radius: 10px;
-        }
-        .content-section {
-            padding: 40px 10%;
+            width: 250px;
             text-align: center;
-            color: #ffcc00;
-        }
-        .content-section h1 {
-            margin-bottom: 15px;
-            font-size: 28px;
-        }
-        .content-section p {
-            font-size: 18px;
-            color: #cccccc;
-        }
-        .carousel-item {
-            height: 400px;
-            background-size: cover;
-            background-position: center;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
         }
-        .carousel-caption {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            border-radius: 10px;
+        .info-box img {
+            width: 100%;
+            height: 150px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        .footer {
+            background: rgba(0, 0, 0, 0.85);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .footer-section {
+            width: 30%;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 5px;
+        }
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+        .footer-section ul li a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .social-icons a img {
+            width: 30px;
+            margin: 5px;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+        .social-icons a img:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        .footer-bottom {
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            padding-top: 10px;
+            font-size: 14px;
+            opacity: 0.7;
         }
     </style>
 </head>
@@ -95,79 +192,91 @@
     <nav class="navbar">
         <img src="./images/logoo.png.jpg" alt="Logo" width="50">
         <span class="navbar-brand">Personalized News Aggregator</span>
-        <button class="logout-btn" onclick="logout()">Logout</button>
+        <div class="menu-container">
+            <button class="menu-btn" onclick="toggleMenu()">&#8942;</button>
+            <div class="menu-dropdown" id="menuDropdown">
+                <a href="real_time_news.html">Real-Time News Updates</a>
+                <a href="ai_powered_personalization.html">AI-Powered Personalization</a>
+                <a href="help_and_support.html">Help and Support</a>
+                <a href="privacy_policy.html">Privacy Policy</a>
+            </div>
+            <a class="btn btn-light" href="login.html">Login</a>
+        </div>
     </nav>
-    
-    <ul class="nav nav-tabs justify-content-center mt-2">
-        <li class="nav-item"><a class="nav-link" href="preferences.html">Preferences</a></li>
-        <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
-        <li class="nav-item"><a class="nav-link" href="magazine.html">Magazine</a></li>
-        <li class="nav-item"><a class="nav-link" href="collaboration.html">Collaboration</a></li>
-        <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
-    </ul>
 
-    <div class="video-container">
-        <video autoplay loop muted>
-            <source src="introback.mp4" type="video/mp4">
-        </video>
-        <div class="video-overlay">
-            <h1>Welcome to Personalized News Aggregator</h1>
-            <p>Bringing you the latest news tailored to your preferences.</p>
+    <div class="container">
+        <h1 class="headline" style="margin-top: -80px;">Your Personalized News, Anytime, Anywhere</h1>
+        <p class="subtext">Stay updated with the latest news based on your preferences.</p>
+        <a href="login.html" class="btn btn-custom">Get Started</a>
+    </div>
+
+    <div class="info-section">
+        <div class="slider">
+            <div class="info-box"><img src="./images/headlines.jpg" alt="News 1"><p>Latest Headlines</p></div>
+            <div class="info-box"><img src="./images/global.jpg" alt="News 2"><p>Global Insights</p></div>
+            <div class="info-box"><img src="./images/sports.jpg" alt="News 3"><p>Sports & Tech</p></div>
+            <div class="info-box"><img src="./images/business.jpg" alt="News 4"><p>Business & Economy</p></div>
+            <div class="info-box"><img src="./images/science.jpg" alt="News 5"><p>Science & Health</p></div>
+            <div class="info-box"><img src="./images/entertainment.jpg" alt="News 6"><p>Entertainment & Arts</p></div>
+            <div class="info-box"><img src="./images/politics.jpg" alt="News 7"><p>Politics & Society</p></div>
+            <div class="info-box"><img src="./images/travel.jpg" alt="News 8"><p>Travel & Lifestyle</p></div>
+            <!-- Duplicate for seamless loop -->
+            <div class="info-box"><img src="./images/headlines.jpg" alt="News 1"><p>Latest Headlines</p></div>
+            <div class="info-box"><img src="./images/global.jpg" alt="News 2"><p>Global Insights</p></div>
+            <div class="info-box"><img src="./images/sports.jpg" alt="News 3"><p>Sports & Tech</p></div>
+            <div class="info-box"><img src="./images/business.jpg" alt="News 4"><p>Business & Economy</p></div>
+            <div class="info-box"><img src="./images/science.jpg" alt="News 5"><p>Science & Health</p></div>
+            <div class="info-box"><img src="./images/entertainment.jpg" alt="News 6"><p>Entertainment & Arts</p></div>
+            <div class="info-box"><img src="./images/politics.jpg" alt="News 7"><p>Politics & Society</p></div>
+            <div class="info-box"><img src="./images/travel.jpg" alt="News 8"><p>Travel & Lifestyle</p></div>
         </div>
     </div>
     
-    <div class="content-section">
-        <h2>Stay Updated with Personalized News:</h2>
-        <p>Our platform ensures you receive the latest and most relevant news based on your interests.
-            "In today’s fast-paced digital world, staying informed with relevant and trustworthy news is more important than ever. Our Personalized News Aggregator ensures that you receive the latest updates tailored to your interests, providing a seamless and engaging experience. Whether you're passionate about technology, politics, sports, health, or entertainment, our platform curates content from trusted sources, giving you real-time insights at your fingertips. Say goodbye to information overload and enjoy a smart, personalized approach to news consumption. Stay ahead, stay informed, and explore the world with news that truly matters to you."
-        </p>
-        <h3>Key Features:</h3>
-        <p>✔ Customized News Feed | ✔ Multi-Platform Support | ✔ Reliable Updates | ✔ Various News Sources</p>
-        <h3>How It Works:</h3>
-        <p>1️⃣ Choose Interests | 2️⃣ Subscribe to Sources | 3️⃣ Get Instant Updates</p>
-    </div>
-
     <div class="container mt-5">
-        <center><h2>Latest News</h2></center> 
-        <div id="newsCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active" style="background-image: url('./images/news1.jpg');">
-                    <div class="carousel-caption">
-                        <h4>Breaking: Global Markets See Major Surge</h4>
-                        <p>Stock markets around the world are experiencing a significant rise...</p>
-                    </div>
-                </div>
-                
-                <div class="carousel-item" style="background-image: url('./images/news2.jpg');">
-                    <div class="carousel-caption">
-                        <h4>Tech Giants Announce AI Collaboration</h4>
-                        <p>Leading technology companies have announced a new partnership...</p>
-                    </div>
-                </div>
-                <div class="carousel-item" style="background-image: url('./images/news3.jpg');">
-                    <div class="carousel-caption">
-                        <h4>Sports: Historic Win in Football Championship</h4>
-                        <p>The national team secures a thrilling victory...</p>
-                    </div>
+        <h2>Why Choose Us?</h2>
+        <p>Our platform ensures you never miss out on important news that matters to you. Get curated news from trusted sources, breaking updates, and tailored recommendations.</p>
+        <p>We value unbiased journalism and provide a clutter-free reading experience.</p>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="real_time_news.html">Real-Time News</a></li>
+                    <li><a href="ai_powered_personalization.html">AI Personalization</a></li>
+                    <li><a href="help_and_support.html">Help & Support</a></li>
+                    <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Did You Know?</h3>
+                <p>Over 2.5 quintillion bytes of data are created every day! Stay informed with the latest news that matters to you.</p>
+                <p>Fake news spreads 6x faster than real news on social media.</p>
+                <p>Around 60% of people get their news from social media instead of traditional sources.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="./images/fbook.png" alt="Facebook"></a>
+                    <a href="#"><img src="./images/x.png"Twitter"></a>
+                    <a href="https://www.instagram.com/sohampatange_27?igsh=a3Q5ajR2eW40cjhu"><img src="./images/Insta.png" alt="Instagram"></a>
+                    <a href="#"><img src="./images/Lin.png" alt="LinkedIn"></a>
+                    <p>📩 Engage With Us: Have a news tip or feedback? Connect with us on Facebook, Twitter, Instagram, and LinkedIn.</p>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </button>
         </div>
-    </div>
-    <div class="footer mt-5 text-center">
+        <div class="footer-bottom">
+            <p>"The man who reads nothing at all is better educated than the man who reads nothing but newspapers." – Thomas Jefferson</p>
+        </div>
+    </footer>
+    <div class="footer">
         <p>&copy; 2025 Personalized News Aggregator. All Rights Reserved.</p>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        function logout() {
-            localStorage.removeItem("loggedIn");
-            window.location.href = "login.html";
+        function toggleMenu() {
+            var dropdown = document.getElementById("menuDropdown");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
         }
     </script>
 </body>
